@@ -10,15 +10,14 @@ footer {
     box-shadow: 0 0 5px rgb(105, 105, 105);
 }
 
-footer * {
+footer a, footer span {
     color: #eda939;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 footer hr {
-    border-left: 1px solid #eda939;
-    width: 1px;
+    border-left: 1.5px solid #eda939;
     height: 1em;
 }
 
