@@ -1,5 +1,5 @@
 1 điểm: xây dựng bố cục tổng quát gồm Header, Nav, Main, Side và Footer theo thông số kích thước và vị trí yêu cầu. Tổng thể trang web phải được canh giữa trình duyệt theo chiều ngang.
-1 điểm: định dạng phần Header bao gồm cả dữ liệu.
+1 điểm: định dạng phần Header bao gồm cả dữ liệu. 
 1 điểm: định dạng phần Nav bao gồm cả dữ liệu.
 1 điểm: định dạng phần Footer bao gồm cả dữ liệu.
 1 điểm: định dạng phần Side bao gồm cả dữ liệu.

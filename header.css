@@ -15,7 +15,6 @@ body {
 
 #center-page-container{
     width: 1200px;
-    position: relative;
 }
 
 
@@ -41,38 +40,35 @@ header {
     box-shadow: 3px 3px 10px #acacac;
 }
 
-nav {
+#topbar nav {
     position: absolute;
+    top: 5.2rem;
     left : 50%;
-    bottom: 2.9rem;
     transform: translateX(-50%);
     background-color: #bdd2f8;
     border-radius: 5px; 
-    height: 2rem;
+    height: 2rem; 
     display: flex;
-    align-items: center;    
     box-shadow: 3px 3px 10px #acacac;
 }
 
-nav ul {
+#topbar nav ul {
     list-style: none;
     display: flex;
+    align-self: center; 
     justify-content: space-between;
     width: 600px;
 }
-
-
-nav ul li a{
-    padding: 1rem;
+#topbar nav ul li a{
+    padding-right: 1rem;
+    padding-left: 1rem;
     color: #5a79d6;
     text-shadow: 0 0 3px #868686;
 }
 
-nav ul li a:hover, nav ul li a:active {
+#topbar nav ul li a:hover, header nav ul li a:active {
     color: #ead2b5;
 } 
-
-
 
 hr {
     border: solid 1px dodgerblue;
