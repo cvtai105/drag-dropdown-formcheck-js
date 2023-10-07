@@ -1,0 +1,11 @@
+#content>hr {
+    border-left: 1px dotted dodgerblue;
+}
+
+#content {
+    display: flex;
+}
+
+aside {
+    width: 360px;
+}

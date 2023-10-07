@@ -10,7 +10,6 @@ body {
     padding: 0;
     margin: 0;
     list-style: none;
-    text-decoration: none;
 }
 
 #center-page-container{
@@ -64,16 +63,15 @@ header {
     padding-left: 1rem;
     color: #5a79d6;
     text-shadow: 0 0 3px #868686;
+    text-decoration: none;
 }
 
 #topbar nav ul li a:hover, header nav ul li a:active {
     color: #ead2b5;
 } 
 
-hr {
+.bluehr {
     border: solid 1px dodgerblue;
-    border-top: 1px solid #fff;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-  

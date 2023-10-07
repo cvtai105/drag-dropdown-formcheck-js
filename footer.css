@@ -1,0 +1,28 @@
+footer {
+    width: 100%;
+    background: #f8e3b6;
+    border-radius: 3px;
+    border: 1px solid #eda939;
+    color: #eda939;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgb(105, 105, 105);
+}
+
+footer * {
+    color: #eda939;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+footer hr {
+    border-left: 1px solid #eda939;
+    width: 1px;
+    height: 1em;
+}
+
+footer a:hover {
+    background-color: #eda939;
+    color: #f8e3b6;
+}
