@@ -8,6 +8,7 @@ footer {
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 5px rgb(105, 105, 105);
+    margin-top: 5px;
 }
 
 footer a, footer span {
@@ -18,10 +19,10 @@ footer a, footer span {
 
 footer hr {
     border-left: 1.5px solid #eda939;
-    height: 1em;
+    height: 1rem;
 }
 
-footer a:hover {
+footer a:hover, footer a.current-link {
     background-color: #eda939;
     color: #f8e3b6;
 }

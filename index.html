@@ -12,20 +12,20 @@
 <body>
     <div id="center-page-container">
         <div id="topbar">
-            <header class="gradient-dodgerblue">Bài tập 1 - 21120550</header>
-            <nav>
+            <div id="header" class="gradient-dodgerblue">Bài tập 1 - 21120550</div>
+            <div id="nav">
                 <ul>
-                    <li><a href="#">Menu 1</a></li>
-                    <li><a href="#">Menu 2</a></li>
-                    <li><a href="#">Menu 3</a></li>
-                    <li><a href="#">Menu 4</a></li>
-                    <li><a href="#">Menu 5</a></li>
+                    <li><a href="./index.html" class="current-link">Menu 1</a></li>
+                    <li><a href="./page404.html">Menu 2</a></li>
+                    <li><a href="./page404.html">Menu 3</a></li>
+                    <li><a href="./page404.html">Menu 4</a></li>
+                    <li><a href="./page404.html">Menu 5</a></li>
                 </ul>
                 
-            </nav>
+            </div>
         </div>
         <hr class = "bluehr">
-        <div id="content">
+        <div id="content-container">
             <aside id="news-container">
                 <div id="news 01" class="droped">
                     <h2 class="news-header">NEWS 01<span class="left">▶</span><span class="left">↓</span><span class="right">↕</span></h2>
@@ -37,25 +37,95 @@
                 </div>
             </aside>
             <hr>
-            <main>
-                <h2>ĐĂNG KÝ ĐƠN HÀNG</h2>
+            <main id="main">
+                <h2><center>ĐĂNG KÝ ĐƠN HÀNG</center></h2>
                 <hr>
-                <div id="info-input"></div>
+                <form id="customer-form" action="">
+                    <label for="input-fullname">Họ và tên:</label>
+                    <div class="input-container errdiv">
+                        <input id="input-fullname" type="text">
+                        <label for="input-fullname" class="err-msg">*</label>
+                    </div>
+                
+                    <label for="input-address">Địa chỉ:</label>
+                    <div class="input-container">
+                        <input id="input-address" type="text">
+                        <label for="input-address" class="err-msg">*</label>
+                    </div>
+                
+                    <label for="input-phone">Điện thoại:</label>
+                    <div class="input-container">
+                        <input id="input-phone" type="tel">
+                        <p for="input-phone" class="err-msg">*</p>
+                    </div>
+                
+                    <label for="input-gender">Giới tính:</label>
+                    <div class="input-container radio-selector">
+                        <input id="check-male" type="radio" name="gender">
+                        <label for="check-male">Nam</label>
+                        <input id="check-female" type="radio" name="gender">
+                        <label for="check-female">Nữ</label>
+                        <p class="err-msg">*</p>
+                    </div>
+                    
+                    <label for="input-deliverydate">Ngày giao hàng:</label>
+                    <div class="input-container">
+                        <input id="input-deliverydate" type="date">
+                        <label for="input-deliverydate" class="err-msg">*</label>
+                    </div>
+                
+                    <label for="input-email">Email:</label>
+                    <div class="input-container">
+                        <input id="input-email" type="email">
+                        <label for="input-deliverydate" class="err-msg">*</label>                    
+                    </div>
+                </form>                
                 <div id="products-register-container">
-                    <div id="list-products"></div>
+                    <p>Danh sách sản phẩm</p>
+                    <div id="list-products">
+                        <div class="product-item">
+                            <strong>📱</strong>
+                            <strong>iPhone 14 Pro Max 256GB</strong>
+                            <strong>&#36;1000</strong>
+                        </div>
+                        <div class="product-item selected">
+                            <strong>💻</strong>
+                            <strong>Laptop</strong>
+                            <strong>&#36;1000</strong>
+                        </div>
+                        <div class="product-item"></div>
+                        <div class="product-item"></div>
+                        <div class="product-item"></div>
+                        <div class="product-item"></div>
+                    </div>
                     <div id="select-btns">
                         <button>&gt;</button>
                         <button>&gt;&gt;</button>
                         <button>&lt;</button>
                         <button>&lt;&lt;</button>
                     </div>
-                    <div id="selected-products"></div>
+                    <p>Sản phẩm đã chọn</p>
+                    <div id="selected-products">
+                        <div class="product-item">
+                            <strong>💻</strong>
+                            <strong>Laptop</strong>
+                            <strong>&#36;1000</strong>
+                        </div>
+                    </div>
                     
                     <button>Đăng ký</button>
                     <button>Xóa hết</button>
                 </div>
                 <hr>
                 <table>
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 9%;">
+                        <col style="width: 20%;">
+                        <col style="width: 11%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+
                     <tr>
                         <th>Họ tên</th>
                         <th>Giới tính</th>
@@ -63,13 +133,41 @@
                         <th>Ngày Giao</th>
                         <th>Sản Phẩm</th>
                     </tr>
+                    <tr>
+                        <td>Họ tên</td>
+                        <td>Giới tính</td>
+                        <td>Địa Chỉ</td>
+                        <td>Ngày Giao</td>
+                        <td>Sản Phẩm</td>
+                    </tr>
+                    <tr>
+                        <td>Họ tên</td>
+                        <td>Giới tính</td>
+                        <td>Địa Chỉ</td>
+                        <td>Ngày Giao</td>
+                        <td>Sản Phẩm</td>
+                    </tr>
+                    <tr>
+                        <td>Họ tên</td>
+                        <td>Giới tính</td>
+                        <td>Địa Chỉ</td>
+                        <td>Ngày Giao</td>
+                        <td>Sảssssssssssssssssssssssssssssssn Phẩm</td>
+                    </tr>
+                    <tr>
+                        <td>Họ tên</td>
+                        <td>Giới tính</td>
+                        <td>Địa Chỉ</td>
+                        <td>Ngày Giao</td>
+                        <td>Sản Phẩm</td>
+                    </tr>
                 </table>
             </main>
         </div>
         <hr class="bluehr">
         <footer>
             <span>Copy right &copy; Chu Tai</span>
-            <a href="#">Menu 1</a>
+            <a href="#" class="current-link">Menu 1</a>
             <hr>
             <a href="#">Menu 2</a>
             <hr>

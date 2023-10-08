@@ -1,17 +1,19 @@
-#content>hr {
-    border-left: 1px dotted dodgerblue;
-}
-
-#content {
+#content-container {
+    margin: 0 10px 5px 5px;
     display: flex;
 }
 
+#content-container>hr {
+    border-left: 1px dotted dodgerblue;
+}
+
 aside {
-    width: 360px;
+    position: sticky;
+    flex: 1 1 360px;
 }
 
 aside>div {
-    margin: 0 5px 5px 5px;
+    margin: 4px 6px 3px 0;
 }
 
 .news-header {

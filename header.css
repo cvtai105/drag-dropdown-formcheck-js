@@ -1,9 +1,10 @@
+
+
 body {
     display: flex;
     width: 100%;
     justify-content: center;
 }
-
 
 * {
     box-sizing: border-box;
@@ -14,10 +15,11 @@ body {
 
 #center-page-container{
     width: 1200px;
+    position: relative;
 }
+    
 
-
-header {
+#header {
     width: 100%;
     background: linear-gradient(to top, #a5c9ff, #5a99ff);
     border-radius: 10px;
@@ -33,14 +35,14 @@ header {
     text-shadow:  0 0 5px #000, 0 0 4px #000, 0 0 3px #000;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 2rem;
     letter-spacing: 0.5rem;
-
     box-shadow: 3px 3px 10px #acacac;
 }
 
-#topbar nav {
+#nav {
     position: absolute;
+    width: 50%;
     top: 5.2rem;
     left : 50%;
     transform: translateX(-50%);
@@ -48,30 +50,32 @@ header {
     border-radius: 5px; 
     height: 2rem; 
     display: flex;
-    box-shadow: 3px 3px 10px #acacac;
+    box-shadow: 3px 3px 10px #acacac; 
+    padding: 0 1rem 0 1rem; 
 }
 
-#topbar nav ul {
+#nav ul {
+
+    flex: 1 1 600px;
     list-style: none;
     display: flex;
-    align-self: center; 
+    align-self: center;
     justify-content: space-between;
-    width: 600px;
 }
-#topbar nav ul li a{
-    padding-right: 1rem;
-    padding-left: 1rem;
+
+#nav ul li a{
+
     color: #5a79d6;
     text-shadow: 0 0 3px #868686;
     text-decoration: none;
 }
 
-#topbar nav ul li a:hover, header nav ul li a:active {
+#nav ul li a:hover, 
+#nav ul li a:active, 
+#nav ul li a.current-link{
     color: #ead2b5;
 } 
 
 .bluehr {
-    border: solid 1px dodgerblue;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    border: solid 1px dodgerblue
 }
