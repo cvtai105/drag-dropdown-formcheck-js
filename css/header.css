@@ -19,7 +19,7 @@ body {
 }
     
 
-#header {
+header {
     width: 100%;
     background: linear-gradient(to top, #a5c9ff, #5a99ff);
     border-radius: 10px;
@@ -40,7 +40,7 @@ body {
     box-shadow: 3px 3px 10px #acacac;
 }
 
-#nav {
+nav {
     position: absolute;
     width: 50%;
     top: 5.2rem;
@@ -54,7 +54,7 @@ body {
     padding: 0 1rem 0 1rem; 
 }
 
-#nav ul {
+nav ul {
 
     flex: 1 1 600px;
     list-style: none;
@@ -63,16 +63,16 @@ body {
     justify-content: space-between;
 }
 
-#nav ul li a{
+nav ul li a{
 
     color: #5a79d6;
     text-shadow: 0 0 3px #868686;
     text-decoration: none;
 }
 
-#nav ul li a:hover, 
-#nav ul li a:active, 
-#nav ul li a.current-link{
+nav ul li a:hover, 
+nav ul li a:active, 
+nav ul li a.current-link{
     color: #ead2b5;
 } 
 

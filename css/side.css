@@ -1,0 +1,93 @@
+#content-container {
+    margin: 0 10px 5px 5px;
+    display: flex;
+}
+
+#content-container>hr {
+    border-left: 1px dotted dodgerblue;
+}
+
+aside {
+    flex: 1 1 360px;
+    position: relative;
+}
+
+aside>div {
+    margin: 4px 6px 3px 0;
+}
+
+aside>div:nth-child(3){
+    order: -1;
+}
+
+aside>.transparent-news {
+    padding-right: 6px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.5;
+}
+
+aside .news-header {
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+    color: #b99faa;
+    background-color: #f6dbb6;
+}
+
+aside .news-detail{
+    border: 1px solid gray;
+    color: #6d95e1;
+    border-radius: 3px;
+    padding: 0.1em 0.2em 0.1em 0.5em;
+    display: none;
+}
+
+aside button {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0); /*khong mau*/
+    border: none;
+    font-size: larger;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+aside button.left:hover {
+    cursor: pointer;
+}
+aside button.right:hover {
+    cursor: n-resize;
+}
+
+aside .compressbtn{
+    display: none;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.droped>h2 {
+    color: white;
+    background-color: #e99031;
+}
+.droped>article {
+    display: block;
+}
+
+.droped .dropbtn{ 
+    display: none;
+}
+.droped .compressbtn {
+    display: block;
+}
+
+

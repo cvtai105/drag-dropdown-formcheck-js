@@ -22,6 +22,7 @@ main>h2{
 
 #customer-form>.input-container>input{
     width: 100%;
+    box-sizing: content-box;
 }
 #customer-form>.input-container>input[type="radio"]{
     width: auto;
@@ -31,7 +32,6 @@ main>h2{
     display: none;
 }
 #customer-form>.errdiv>input{
-    box-sizing: content-box;
     border: rgb(255, 123, 0) solid 1px;
 }
 #customer-form>.errdiv>.err-msg{
@@ -88,10 +88,10 @@ main>h2{
     margin-bottom: 5px;
     width: 30px;
 }
-#products-register-container>button:first-of-type{
+#btn-register{
     margin: 0 5px 5px auto;
 }
-#products-register-container>button:last-of-type{
+#btn-clear{
     margin: 0 auto 5px 5px;
 }
 
@@ -127,6 +127,7 @@ main>h2{
 .product-item>strong{
     font-size: 1em;
     justify-self: center;
+    pointer-events: none;
 }
 .product-item>strong:last-child{
     color: red;
@@ -135,7 +136,7 @@ main>h2{
 .product-item>strong:first-child{
     font-size: 2em;
 }
-.product-item.selected{
+.product-item[marked="1"]{
     background-color: #e1a139;
     color: white;
 }
