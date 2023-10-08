@@ -3,10 +3,9 @@ addDragFeature();
 addRegisterFeature(); //alo add check form feature
 addClickEventOnProduct();
 addSelectBtnEvent();
-addRegisterEvent();
+addClearTableEvent();
 
 //navagation bar
-document.getElementById(elementId)
 
 
 //news dropdown
@@ -54,16 +53,36 @@ function addRegisterFeature() {
     const registerElem = document.getElementById("btn-register");
     registerElem.addEventListener("click", registerHandler)
     function registerHandler(e) {
-        //form check input
+        const data = ["","","","",""];
+        
+        //form check input and add data
         let elem = document.getElementById("input-fullname");
+        data[0] = elem.value
         let err = getNameErr(elem.value);
         errHandler(err, elem);
+
+        elem = document.getElementById("check-female")
+        err = false;
+        if(elem.checked == false){
+            if(document.getElementById("check-male").checked == false){
+                err = "*Chưa chọn giới tính";
+            }
+            else{
+                data[1] = "Nam";
+            }
+        }
+        else{
+            data[1] ="Nữ"
+        }
+        errHandler(err, elem.nextElementSibling);
     
         elem = document.getElementById("input-address");
+        data[2] = elem.value;
         err = getAddressErr(elem.value) 
         errHandler(err, elem);
     
         elem = document.getElementById("input-deliverydate");
+        data[3] = (elem.value);
         err = getDateErr(elem.value) 
         errHandler(err, elem);
     
@@ -75,22 +94,17 @@ function addRegisterFeature() {
         err = getEmailErr(elem.value)
         errHandler(err, elem);
     
-        elem = document.getElementById("check-female")
-        err = false;
-        if(elem.checked == false){
-            console.log(1)
-            if(document.getElementById("check-male").checked == false){
-                err     = "*Chưa chọn giới tính";
-            }
-        }
-        errHandler(err, elem.nextElementSibling);
     
-        if(document.getElementsByClassName("errdiv").length == 0){
+        let products = "";
+        for(let i of document.getElementById("selected-products").getElementsByClassName("product-item")){
+            products += i.firstElementChild.nextElementSibling.innerHTML + "; ";
+        }
+        data[4] = (products.slice(0, -2));
+        if(document.getElementsByClassName("errdiv").length == 0 || products != ""){
             addInformationToTable();
         }
     
         function errHandler(err, elem) {
-            console.log(elem.value)
             if(err){
                 elem.parentElement.classList.add("errdiv");
                 elem.nextElementSibling.innerHTML = err;
@@ -105,7 +119,7 @@ function addRegisterFeature() {
                 return "*Họ tên chưa được điền";
             }
             else {
-                var regex = /\b\w+\b\s+\b\w+\b/;
+                var regex = /^([^\u0000-\u007F]|[^\W\d])+\s([^\u0000-\u007F]|[^\W\d])+(((\s([^\u0000-\u007F]|[^\W\d])+)+)|$)/;
             
                 if (regex.test(value)) {
                   return false; 
@@ -120,14 +134,13 @@ function addRegisterFeature() {
                 return "*Địa chỉ chưa được điền";
             }
             else {
-                if (/(\b\w+\b\s*)+/.test(value)) {
+                if (/^(\s+|[^\u0000-\u007F]|\w)+\s([^\u0000-\u007F]|\w)+(((\s([^\u0000-\u007F]|\w)+)+)|$)/.test(value)) {
                   return false; 
                 } else {
                   return "*Địa chỉ không hợp lệ";
                 }
             }
         }
-    
         function getPhoneErr(value) {
             if(value == ""){
                 console.log()
@@ -137,32 +150,27 @@ function addRegisterFeature() {
                 if (/^0\d{9}$/.test(value)) {
                   return false; 
                 } else {
-                  return "*Điện thoại không hợp lệ";
+                  return "*Điện thoại gồm 10 chữ số bắt đầu bằng 0";
                 }
             }
         }
-    
         function getDateErr(value) {
             if(value == ""){
-                console.log()
                 return "*Ngày giao hàng chưa được điền";
             }
             else {
-                if (/(\b\w+\b\s*)+/.test(value)) {
-                  return false; 
-                } else {
-                  return "*Ngày giao hàng không hợp lệ";
+                if(new Date().getTime() > new Date(value)){
+                    return "Không có máy thời gian để giao về quá khứ";
                 }
             }
         }
-    
         function getEmailErr(value) {
             if(value == ""){
                 console.log()
                 return "*Email chưa được điền";
             }
             else {
-                if (/(\b\w+\b\s*)+/.test(value)) {
+                if (/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(value)) {
                   return false; 
                 } else {
                   return "*Email không hợp lệ";
@@ -171,13 +179,17 @@ function addRegisterFeature() {
         }
     
         function addInformationToTable() {
-            const data = {};
-
+            //convert product to string
+            const row = document.createElement("tr");
+            for(let i =0; i<5; i++){
+                const tdata = document.createElement("td");
+                tdata.innerHTML = data[i];
+                row.appendChild(tdata);
+            }
+            document.getElementById("info-table").appendChild(row)
         }
     }
-    
 }
-
 
 
 //mark product
@@ -238,13 +250,16 @@ function addSelectBtnEvent() {
 }
 
 //table update info
-function addRegisterEvent() {
-    const registerBtn = document.getElementById("btn-register");
-    registerBtn.addEventListener("click", registerHandler);
+function addClearTableEvent() {
     const clearBtn = document.getElementById("btn-clear");
     clearBtn.addEventListener("click", clearHandler);
 
-    function registerHandler(e) {
-        
+    function clearHandler(e) {
+        let rows = document.getElementsByTagName("tr");
+        let l = rows.length;
+        for(let i = 1; i<l; i++){
+            //after remove, second become first
+            rows[1].remove();
+        }
     }
 }
