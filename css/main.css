@@ -151,7 +151,6 @@ main>h2{
 .product-item:hover{
     border: 3px solid #ff5e00;
 }
-
 .product-item>strong{
     font-size: 1em;
     justify-self: center;
@@ -167,6 +166,13 @@ main>h2{
 .product-item[marked="1"]{
     background-color: #e1a139;
     color: white;
+}
+#products-register-container .draged{
+    position: absolute;
+    background-color: #e1a139;
+    width: 50%;
+    z-index: 1;
+    opacity: 0.6;
 }
 
 /* style table */

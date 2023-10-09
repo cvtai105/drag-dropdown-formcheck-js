@@ -6,11 +6,73 @@ addClickEventOnProduct();
 addSelectBtnEvent();
 addClearTableEvent();
 
+document.addEventListener("mousedown", e => {
+    console.log(e.clientX, e.clientY);
+    console.log(document.getElementById("list-products").offsetTop);
+    console.log(document.getElementById("products-register-container").offsetTop);
+})
+
 //navagation bar - menu
 const url = new URL(document.URL);
 document.querySelectorAll(`a[href="${url.pathname}"]`).forEach(link => {
     link.classList.add("current-link");
 });
+
+//product drag
+function addProductDragFeature() {
+    const productColection = document.getElementsByClassName("product-item");
+    
+    
+    for(const i of productColection){
+        i.addEventListener("mousedown", e => {
+            downEvt(e, i);
+        });
+    }
+
+    let downX, downY;
+    function downEvt(e, itemElem) {
+        e.preventDefault();
+        const itemClone = itemElem.cloneNode(true);
+        itemClone.classList.add("draged");
+
+        downX = e.clientX;
+        downY = e.clientY;
+        let target = itemElem.parentElement;
+        let home = itemElem.parentElement;
+
+        document.addEventListener("mousemove", move)
+        document.addEventListener("mouseup", drop)
+        
+        function move(e) {
+            console.log(itemClone)
+            e.preventDefault();
+            if(e.clientX - downX > 10 || e.clientY - downY > 10 || e.clientX - downX < -10 || e.clientY - downY < -10){
+                itemElem.parentElement.appendChild(itemClone);
+            }
+            itemClone.style.top = itemElem.offsetTop  + e.clientY - downY + "px";
+            itemClone.style.left = itemElem.offsetLeft + e.clientX - downX  +"px";
+            
+            let elements = document.elementsFromPoint(e.clientX, e.clientY)
+            elements.forEach((elt) => {
+                if(elt.id =="list-products" || elt.id=="selected-products"){
+                    target = elt;
+                }
+            });
+        }
+        function drop(e) {
+            document.removeEventListener("mousemove", move);
+            itemClone.remove();
+            if(target != home){
+                target.appendChild(itemElem);
+            }
+
+            document.removeEventListener("mouseup", drop);
+        }
+
+        
+    }
+    
+}
 
 //news dropdown
 function addDropDownFeature() {
@@ -43,19 +105,65 @@ function addNewsDragFeature() {
     for(const btn of dragBtnCollection){
         //two parameter handler test
         btn.addEventListener("mousedown", e => {
-            dragHanler(e, btn); 
+            dragHanler(e, btn.parentElement.parentElement); 
         });
     }
+    function dragHanler(e, newsElem) {
+        e.preventDefault();
 
-    function dragHanler(e, btnElem) {
-        btnElem.style.position = "absolute";
+        const asideElem = newsElem.parentElement;
+        const headerElem = newsElem.firstElementChild;
+        const newsClone = newsElem.cloneNode(true); 
+        asideElem.appendChild(newsClone);
+        newsClone.classList.add("transparent-news");
+        newsClone.classList.remove("news");
+
+        let cloneTop = e.clientY - asideElem.offsetTop - 4 - 36; //4for top margin, 36 for midler header
+        newsClone.style.top = `${cloneTop}px`;
+        document.addEventListener("mousemove", moveHandle);
+        document.addEventListener("mouseup", dropHandle);
+
+        let elemAfter;
+        function moveHandle(e) {
+            e.preventDefault();
+            newsClone.style.top = `${e.clientY - asideElem.offsetTop - 4 - 36}px`;
+            const newsCollection = document.getElementById("news-container").getElementsByClassName("news");
+
+            for (let news of newsCollection) {
+                if(news.offsetTop >  newsClone.offsetTop){
+                    elemAfter = news;
+                    break;
+                }
+                elemAfter = null;
+            }
+        }
+        function dropHandle(e) {
+            
+            document.removeEventListener("mousemove", moveHandle);
+            newsClone.remove();
+            let before;
+    
+            if(elemAfter != null && elemAfter !== newsElem){
+                asideElem.appendChild(newsElem);
+
+                while(elemAfter != null && elemAfter!==newsElem){
+                    before = elemAfter;
+                    elemAfter = elemAfter.nextElementSibling;
+                    
+                    asideElem.appendChild(before);
+                }
+            }
+           
+            document.removeEventListener("mouseup", dropHandle);
+
+                
+        }
+
     }
 
 }
 
-function addProductDragFeature() {
-    
-}
+
 
 //register
 function addRegisterFeature() {
