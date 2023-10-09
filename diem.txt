@@ -15,4 +15,4 @@
 ✓ 1 điểm: đáp ứng responsive với độ phân giải 768px.
 
 
-Tự đánh giá: 15điểm
+Tự đánh giá: 15 điểm

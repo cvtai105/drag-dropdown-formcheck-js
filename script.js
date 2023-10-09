@@ -142,6 +142,10 @@ function addNewsDragFeature() {
             document.removeEventListener("mousemove", moveHandle);
             newsClone.remove();
             let before;
+
+            if(elemAfter == null){
+                asideElem.appendChild(newsElem);
+            }
     
             if(elemAfter != null && elemAfter !== newsElem){
                 asideElem.appendChild(newsElem);
@@ -217,6 +221,11 @@ function addRegisterFeature() {
             products += i.firstElementChild.nextElementSibling.innerHTML + "; ";
         }
         data[4] = (products.slice(0, -2));
+
+        
+        if(products == ""){
+            alert("Thầy chưa chọn sản phẩm")
+        }
         if(document.getElementsByClassName("errdiv").length == 0 && products != ""){
             addInformationToTable();
         }

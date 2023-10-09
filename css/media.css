@@ -26,4 +26,8 @@
         display: block;
         overflow: auto;
     }
+    aside .news-header {
+        height: 2em;
+        padding: 0.5em 0 0.5em 0;
+    }
 }

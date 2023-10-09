@@ -16,9 +16,6 @@ aside>div {
     margin: 4px 6px 3px 0;
 }
 
-aside>div:nth-child(3){
-    order: -1;
-}
 
 aside>.transparent-news {
     padding-right: 6px;
