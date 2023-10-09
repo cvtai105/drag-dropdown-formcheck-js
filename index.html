@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/footer.css">
     <link rel="stylesheet" type="text/css" href="./css/side.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/media.css">
 </head>
 <body>
     <div id="center-page-container">
@@ -15,13 +16,12 @@
             <header>Bài tập 1 - 21120550</header>
             <nav>
                 <ul>
-                    <li><a href="./index.html" class="current-link">Menu 1</a></li>
-                    <li><a href="./page/page404.html">Menu 2</a></li>
-                    <li><a href="./page/page404.html">Menu 3</a></li>
-                    <li><a href="./page/page404.html">Menu 4</a></li>
-                    <li><a href="./page/page404.html">Menu 5</a></li>
+                    <li><a href="/index.html">Menu 1</a></li>
+                    <li><a href="/page/page404.html">Menu 2</a></li>
+                    <li><a href="/page/page404.html">Menu 3</a></li>
+                    <li><a href="/page/page404.html">Menu 4</a></li>
+                    <li><a href="/page/page404.html">Menu 5</a></li>
                 </ul>
-                
             </nav>
         </div>
         <hr class = "bluehr">
@@ -39,10 +39,15 @@
                     <h2 class="news-header">NEWS 03<button class="dropbtn left">▶</button><button class="compressbtn left">↓</button><button class="dragbtn right">↕</button></h2>
                     <article class="news-detail">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</article>
                 </div>
+                <div id="news03">
+                    <h2 class="news-header">NEWS 03<button class="dropbtn left">▶</button><button class="compressbtn left">↓</button><button class="dragbtn right">↕</button></h2>
+                    <article class="news-detail">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</article>
+                </div>
                 <div class="transparent-news">
                     <h2 class="news-header">NEWS 03<button class="dropbtn left">▶</button><button class="compressbtn left">↓</button><button class="dragbtn right">↕</button></h2>
                     <article class="news-detail">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</article>
                 </div>
+                
             </aside>
             <hr>
             <main id="main">
@@ -67,7 +72,7 @@
                         <p for="input-phone" class="err-msg"></p>
                     </div>
                 
-                    <label for="input-gender">Giới tính:</label>
+                    <label for="check-male">Giới tính:</label>
                     <div class="input-container radio-selector">
                         <input id="check-male" type="radio" name="gender">
                         <label for="check-male">Nam</label>
@@ -94,17 +99,38 @@
                         <div class="product-item">
                             <strong>📱</strong>
                             <strong>iPhone 14 Pro Max 256GB</strong>
-                            <strong>&#36;1000</strong>
+                            <strong>&#36;1349</strong>
+                        </div>
+                        <div class="product-item">
+                            <strong>📱</strong>
+                            <strong>Samsung S23 Ultra 256GB</strong>
+                            <strong>&#36;1089</strong>
+                        </div>
+                        <div class="product-item">
+                            <strong>📱</strong>
+                            <strong>iPad Pro M1 11'' 128GB</strong>
+                            <strong>&#36;999</strong>
                         </div>
                         <div class="product-item">
                             <strong>💻</strong>
-                            <strong>Laptop</strong>
-                            <strong>&#36;1000</strong>
+                            <strong>ASUS ZenBook UX505</strong>
+                            <strong>&#36;929</strong>
                         </div>
-                        <div class="product-item"></div>
-                        <div class="product-item"></div>
-                        <div class="product-item"></div>
-                        <div class="product-item"></div>
+                        <div class="product-item">
+                            <strong>💻</strong>
+                            <strong>LG Gram 2023 17</strong>
+                            <strong>&#36;1049</strong>
+                        </div>
+                        <div class="product-item">
+                            <strong>💻</strong>
+                            <strong>DELL XPS 13 9315 (2022)</strong>
+                            <strong>&#36;1199</strong>
+                        </div>
+                        <div class="product-item">
+                            <strong>💻</strong>
+                            <strong>MSI Gaming GF63</strong>
+                            <strong>&#36;813</strong>
+                        </div>
                     </div>
                     <div id="select-btns">
                         <button id="select-btn">&gt;</button>
@@ -115,9 +141,24 @@
                     <p>Sản phẩm đã chọn</p>
                     <div id="selected-products">
                         <div class="product-item">
+                            <strong>📱</strong>
+                            <strong>iPhone 14 Pro 256GB</strong>
+                            <strong>&#36;849</strong>
+                        </div>
+                        <div class="product-item">
                             <strong>💻</strong>
-                            <strong>Laptop</strong>
-                            <strong>&#36;1000</strong>
+                            <strong>Macbook Pro 16" 2023</strong>
+                            <strong>&#36;2300</strong>
+                        </div>
+                        <div class="product-item">
+                            <strong>💻</strong>
+                            <strong>LG Gram 2021 14''</strong>
+                            <strong>&#36;729</strong>
+                        </div>
+                        <div class="product-item">
+                            <strong>📱</strong>
+                            <strong>iPad Pro M2 12.9'' 256GB</strong>
+                            <strong>&#36;1399</strong>
                         </div>
                     </div>
                     
@@ -142,32 +183,32 @@
                         <th>Sản Phẩm</th>
                     </tr>
                     <tr>
-                        <td>Họ tên</td>
-                        <td>Giới tính</td>
-                        <td>Địa Chỉ</td>
-                        <td>Ngày Giao</td>
-                        <td>Sản Phẩm</td>
+                        <td>Nguyễn Thị Hằng</td>
+                        <td>Nữ</td>
+                        <td>123 Đường Nguyễn Văn A, Quận 1, TP. Hồ Chí Minh</td>
+                        <td>12/3/2025</td>
+                        <td>iPhone 14 Pro Max 256GB; Samsung S23 Ultra 256GB</td>
                     </tr>
                     <tr>
-                        <td>Họ tên</td>
-                        <td>Giới tính</td>
-                        <td>Địa Chỉ</td>
-                        <td>Ngày Giao</td>
-                        <td>Sản Phẩm</td>
+                        <td>Lê Thị Mai Anh</td>
+                        <td>Nữ</td>
+                        <td>456 Đường Lê Thị B, Quận 2, TP. Hà Nội</td>
+                        <td>23/9/2024</td>
+                        <td>iPad Pro M1 11'' 128GB; ASUS ZenBook UX505</td>
                     </tr>
                     <tr>
-                        <td>Họ tên</td>
-                        <td>Giới tính</td>
-                        <td>Địa Chỉ</td>
-                        <td>Ngày Giao</td>
-                        <td>Sảssssssssssssssssssssssssssssssn Phẩm</td>
+                        <td>Trần Văn Minh</td>
+                        <td>Nam</td>
+                        <td>789 Đường Trần Văn C, Quận 3, TP. Đà Nẵng</td>
+                        <td>7/5/2024</td>
+                        <td>LG Gram 2023 17</td>
                     </tr>
                     <tr>
-                        <td>Họ tên</td>
-                        <td>Giới tính</td>
-                        <td>Địa Chỉ</td>
-                        <td>Ngày Giao</td>
-                        <td>Sản Phẩm</td>
+                        <td>Phạm Quang Huy</td>
+                        <td>Nam</td>
+                        <td>101 Đường Hoàng Văn D, Quận 4, TP. Cần Thơ</td>
+                        <td>15/11/2023</td>
+                        <td>MSI Gaming GF63</td>
                     </tr>
                 </table>
             </main>
@@ -175,18 +216,17 @@
         <hr class="bluehr">
         <footer>
             <span>Copy right &copy; Chu Tai</span>
-            <a href="#" class="current-link">Menu 1</a>
+            <a href="/index.html">Menu 1</a>
             <hr>
-            <a href="#">Menu 2</a>
+            <a href="/page/page404.html">Menu 2</a>
             <hr>
-            <a href="#">Menu 3</a>
+            <a href="/page/page404.html">Menu 3</a>
             <hr>
-            <a href="#">Menu 4</a>
+            <a href="/page/page404.html">Menu 4</a>
             <hr>
-            <a href="#">Menu 5</a>
+            <a href="/page/page404.html">Menu 5</a>
         </footer>
     </div>
-
-    <script src="./script/scipt.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

@@ -1,12 +1,16 @@
 addDropDownFeature();
-addDragFeature();
+addNewsDragFeature();
+addProductDragFeature();
 addRegisterFeature(); //alo add check form feature
 addClickEventOnProduct();
 addSelectBtnEvent();
 addClearTableEvent();
 
-//navagation bar
-
+//navagation bar - menu
+const url = new URL(document.URL);
+document.querySelectorAll(`a[href="${url.pathname}"]`).forEach(link => {
+    link.classList.add("current-link");
+});
 
 //news dropdown
 function addDropDownFeature() {
@@ -33,7 +37,7 @@ function addDropDownFeature() {
 }
 
 //news drag
-function addDragFeature() {
+function addNewsDragFeature() {
     const dragBtnCollection = document.getElementsByClassName("dragbtn");
     
     for(const btn of dragBtnCollection){
@@ -44,8 +48,13 @@ function addDragFeature() {
     }
 
     function dragHanler(e, btnElem) {
+        btnElem.style.position = "absolute";
     }
 
+}
+
+function addProductDragFeature() {
+    
 }
 
 //register
@@ -100,7 +109,7 @@ function addRegisterFeature() {
             products += i.firstElementChild.nextElementSibling.innerHTML + "; ";
         }
         data[4] = (products.slice(0, -2));
-        if(document.getElementsByClassName("errdiv").length == 0 || products != ""){
+        if(document.getElementsByClassName("errdiv").length == 0 && products != ""){
             addInformationToTable();
         }
     
@@ -190,7 +199,6 @@ function addRegisterFeature() {
         }
     }
 }
-
 
 //mark product
 function addClickEventOnProduct() {

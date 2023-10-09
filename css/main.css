@@ -24,10 +24,33 @@ main>h2{
     width: 100%;
     box-sizing: content-box;
 }
+#customer-form>.input-container>input{
+    width: 100%;
+    box-sizing: content-box;
+}
+
 #customer-form>.input-container>input[type="radio"]{
     width: auto;
-    margin: 0 5px 0 5px;
+    margin: 0 10px 0 10px;
+    padding: 10px 10px;
 }
+#customer-form input[type="radio"]:checked {
+    position: relative;
+    accent-color: black;
+}
+#customer-form input[type="radio"]:checked::after {
+    content: "";
+    display: block;
+    position: absolute;;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    border-radius: 30%;
+}
+
 #customer-form .err-msg{
     display: none;
 }
@@ -45,6 +68,7 @@ main>h2{
     grid-template-columns: 1fr 1fr;
     position: relative;
 }
+
 #products-register-container>p {
     order: -1;
     color: #e99031;
@@ -108,9 +132,10 @@ main>h2{
     margin: 5px 0 5px 25px;
     overflow: auto;
     height: 40vh;
-    border: 1px solid #e99031;
+    border: 1px solid rgb(170, 170, 170);
     padding-bottom: 5px;
 }
+
 .product-item{
     height: 4em;
     font-size: 1.2rem;
@@ -122,6 +147,9 @@ main>h2{
     grid-template-columns: 1fr 4fr 1fr;
     align-items: center;
     padding: 0 3px 0 3px;
+}
+.product-item:hover{
+    border: 3px solid #ff5e00;
 }
 
 .product-item>strong{
@@ -158,4 +186,8 @@ th{
 
 td:nth-child(even){
     text-align: center;
+}
+
+td{
+    padding: 0 5px 5px 10px;
 }

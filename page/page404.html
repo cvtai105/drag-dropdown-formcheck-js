@@ -14,10 +14,10 @@
             <nav>
                 <ul>
                     <li><a href="/index.html">Menu 1</a></li>
-                    <li><a href="./page404.html">Menu 2</a></li>
-                    <li><a href="./page404.html">Menu 3</a></li>
-                    <li><a href="./page404.html">Menu 4</a></li>
-                    <li><a href="./page404.html">Menu 5</a></li>
+                    <li><a href="/page/page404.html">Menu 2</a></li>
+                    <li><a href="/page/page404.html">Menu 3</a></li>
+                    <li><a href="/page/page404.html">Menu 4</a></li>
+                    <li><a href="/page/page404.html">Menu 5</a></li>
                 </ul>
                 
             </nav>
@@ -28,16 +28,23 @@
         
         <footer>
             <span>Copy right &copy; Chu Tai</span>
-            <a href="#">Menu 1</a>
+            <a href="/index.html">Menu 1</a>
             <hr>
-            <a href="#">Menu 2</a>
+            <a href="/page/page404.html">Menu 2</a>
             <hr>
-            <a href="#">Menu 3</a>
+            <a href="/page/page404.html">Menu 3</a>
             <hr>
-            <a href="#">Menu 4</a>
+            <a href="/page/page404.html">Menu 4</a>
             <hr>
-            <a href="#">Menu 5</a>
+            <a href="/page/page404.html">Menu 5</a>
         </footer>
+        <script>
+            const url = new URL(document.URL);
+            console.log(url)
+            document.querySelectorAll(`a[href="${url.pathname}"]`).forEach(link => {
+                link.classList.add("current-link");
+            });
+        </script>
     </div>
 </body>
 </html>

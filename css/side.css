@@ -26,6 +26,7 @@ aside>.transparent-news {
     z-index: 1;
     width: 100%;
     opacity: 0.5;
+    display: none;
 }
 
 aside .news-header {
